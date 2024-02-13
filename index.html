@@ -26,7 +26,10 @@
         type='text/css'>
     <link rel="stylesheet" href="assets/css/Highlight-Clean.css">
     <link rel="stylesheet" href="assets/css/styles.css">
-
+    <!-- compare two images -->
+    <!-- <link rel="stylesheet" href="assets/css/bulma.min.css"> -->
+    <link rel="stylesheet" href="assets/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="assets/css/bulma-slider.min.css">
 
     <link rel="apple-touch-icon" sizes="180x180" href="assets/logo.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/logo.png">
@@ -42,6 +45,9 @@
 
     <script src="assets/js/video_comparison.js"></script>
     <script type="module" src="https://unpkg.com/@google/model-viewer@2.0.1/dist/model-viewer.min.js"></script>
+
+    <script src="assets/js/bulma-carousel.min.js"></script>
+    <script src="assets/js/bulma-slider.min.js"></script>
 </head>
 
 <body>
@@ -122,26 +128,67 @@
                     <p style="text-align: justify">
                         Advancements in 3D Gaussian Splatting (GS) have significantly accelerated 3D reconstruction and generation.
                         However, it may require a very large number of Gaussians, which can become a substantial memory footprint.
-                        This paper introduces GES (Generalized Exponential Splatting), a novel representation that employs Generalized Exponential Function (GEF) to model 3D scenes, requiring far fewer particles to represent a scene and thus significantly outperforming Gaussian Splatting methods in efficiency with a plug-and-play replacement ability for Gaussian-based utilities.GES is validated theoretically and empirically in both principled 1D setup and realistic 3D contexts. It is shown to more accurately represent signals with sharp edges, which are typically challenging for Gaussians due to their inherent low-pass characteristics of the Gaussian function.Our empirical analysis demonstrates that GEF outperforms Gaussians in fitting natural-occurring signals (\eg squares, triangles, parabolic signals), thereby reducing the need for extensive splitting operations that increase the memory footprint of Gaussian Splatting. With the aid of a frequency-modulated loss, GES achieves competitive performance in novel-view synthesis standard benchmarks while requiring less than half the memory storage of Gaussian Splatting.
+                        <b>This paper introduces GES (Generalized Exponential Splatting), a novel representation that employs Generalized Exponential Function (GEF) to model 3D scenes, requiring far fewer particles to represent a scene and thus significantly outperforming Gaussian Splatting methods in efficiency with a plug-and-play replacement ability for Gaussian-based utilities.</b> GES is validated theoretically and empirically in both principled 1D setup and realistic 3D contexts. It is shown to more accurately represent signals with sharp edges, which are typically challenging for Gaussians due to their inherent low-pass characteristics of the Gaussian function.Our empirical analysis demonstrates that GEF outperforms Gaussians in fitting natural-occurring signals (e.g. squares, triangles, parabolic signals), thereby reducing the need for extensive splitting operations that increase the memory footprint of Gaussian Splatting. With the aid of a frequency-modulated loss, GES achieves competitive performance in novel-view synthesis standard benchmarks while requiring less than half the memory storage of Gaussian Splatting.
                     </p>
                 </div>
-                <div class="col-sm-12 text-center">
+                <!-- <div class="col-sm-12 text-center">
                     <img src="assets/teaser.png" style="max-width: 70%;"/>
-                </div>
+                </div> -->
             </div>
         </div>
        
         <hr class="divider" />
         <div class="container">
-            <h2> GEF Covers Gaussian and is Theoretically Better than Gaussian in Fitting Signals</h2>
+            <h2> GEF Covers Gaussian and Fits Signals with Fewer Components</h2>
             <div class="row">
-                <div class="col-sm-12">
-                    <img src="assets/theory.png" style="max-width: 100%;"/>
+                <div class="col-sm-6 d-flex align-items-center" style="flex-direction: column;">
+                    <video src="assets/video/gaussian.mp4" autoplay loop playsinline muted
+                        type="video/mp4" style="width: 100%; height: auto;"></video>
+                    <p>Gaussian</p>
                 </div>
-            </div>
+                <div class="col-sm-6 d-flex align-items-center" style="flex-direction: column;">
+                    <video src="assets/video/gef.mp4" autoplay loop playsinline muted
+                        type="video/mp4" style="width: 100%; height: auto;"></video>
+                    <p>Generalized Exponential Function (GEF) </p>
+                </div>
+            </div>  
+            <!-- <div class="row">
+                <div class="col-sm-12 text-center">
+                    <img src="assets/gef_gs.png" style="max-width: 80%;"/>
+                </div>
+            </div> -->
+            <p> GEF fits signals with much fewer components. Thus, theoretically, GEF can reconstruct the same signals with less storage than Gaussian. </p>
+            <h2> GES Can Be Used as A Drop-In Replacement of Gaussian Splatting to Reduce Size</h2>
+            <div id="example1" class="bal-container-small">
+            <div class="row">
+                <div class="bal-after">
+                    <img src="assets/comparisons/ours.png">
+                    <div class="bal-afterPosition afterLabel">
+                    GES (Ours)
+                    </div>
+                </div>
+                
+                <div class="bal-before">
+                    <div class="bal-before-inset">
+                    <img src="assets/comparisons/gauss.png">
+                    <div class="bal-beforePosition beforeLabel">
+                        Gaussian Splatting 
+                    </div>
+                    </div>
+                </div>
+                
+                <div class="bal-handle">
+                    <span class=" handle-left-arrow"></span>
+                    <span class="handle-right-arrow"></span>
+                </div>
+            </div> 
+            <!-- <div class="row">
+                <div class="col-sm-12">
+                    <img src="assets/reconstruction.png" style="max-width: 100%;"/>
+                </div>
+            </div> -->
         </div>
-
-        <div class="container">
+        <!-- <div class="container">
             <h2> Method</h2>
             <h3>Generalized Exponential Splatting</h3>
             <p> We extend the GEF to a Generalized Exponential Splatting (GES) framework to offer a plug-and-play replacement for Gaussian Splatting.</p>
@@ -172,16 +219,16 @@
 
         <hr class="divider" />
         <div class="container">
-            <h2> GES can be Used as A Drop-In Replacement of Gaussian Splatting to Improve Accuracy and Reduce Size in 3D Reconstruction </h2>
-            <div class="row">
+            <h2> GES can be Used as A Drop-In Replacement of Gaussian Splatting to Improve Accuracy and Reduce Size in 3D Reconstruction </h2> -->
+            <!-- <div class="row">
                 <div class="col-sm-12">
                     <img src="assets/reconstruction.png" style="max-width: 100%;"/>
                 </div>
-            </div>
-        </div>
+            </div> -->
+        <!-- </div> -->
       
         
-        <hr class="divider" />
+        <!-- <hr class="divider" />
         <div class="container">
             <h2> GES for Fast 3D Generation</h2>
             <p> GES is adapted to modern 3D generation pipelines using score distillation sampling from a 2D text-to-image model \cite{DreamFusion}, replacing Gaussian Splatting for improved efficiency. </p>
@@ -191,7 +238,7 @@
                 </div>
             </div>
         </div>
-      
+       -->
         
         
         <!-- Footer -->
@@ -199,7 +246,7 @@
         <footer class="footer">
             <div class="container">
                 <div class="content has-text-centered">
-                    <a class="icon-link" href="./static/videos/nerfies_paper.pdf">
+                    <a class="icon-link" href="assets/videos/nerfies_paper.pdf">
                         <i class="fas fa-file-pdf"></i>
                     </a>
                     <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
@@ -251,7 +298,12 @@
                 video.playbackRate = 0.1; // Play at half speed
             });
         </script>
-        
+       
+        <script>
+            new BeforeAfter({
+                id: '#example1'
+            });
+        </script>
 </body>
 
 </html>
