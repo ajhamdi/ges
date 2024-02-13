@@ -52,15 +52,67 @@
             <h1 class="text-center">GES: Generalized Exponential Splatting for Efficient Radiance Field Rendering</h1>
             <br>
         </div>
-        <div class="container" style="max-width: 100%;">
-            <br>
-            <h5 class="text-center">Abdullah Hamd</h5>
-            <br>
+        <div class="container author-container">
+            <div class="row authors">
+                <div class="col">
+                    <h5><a href="https://abdullahamdi.com/">Abdullah Hamdi<sup>1</sup> </a></h5>
+                </div>
+                <div class="col">
+                    <h5><a href="https://lukemelas.github.io/">Luke Melas-Kyriazi<sup>1</sup> </a></h5>
+                </div>
+                <div class="col">
+                    <h5><a href="https://guochengqian.github.io/">Guocheng
+                            Qian<sup>2,4</sup> </a></h5>
+                </div>
+                <div class="col">
+                    <h5><a class="text-center" href="https://cemse.kaust.edu.sa/people/person/jinjie-mai">Jinjie Mai<sup>2</sup></a></h5>
+                </div>
+            </div>
+            <div class="row authors">
+                <div class="col">
+                    <h5><a href="https://ruoshiliu.github.io/">Ruoshi Liu<sup>3</sup></a></h5>
+                </div>
+                <div class="col">
+                    <h5><a href="https://www.cs.columbia.edu/~vondrick/">Carl Vondrick<sup>3</sup></a></h5>
+                </div>
+                <div class="col">
+                    <h5><a href="https://www.bernardghanem.com/">Bernard Ghanem<sup>2</sup></a></h5>
+                </div>
+                <div class="col">
+                    <h5><a href="https://www.robots.ox.ac.uk/~vedaldi/">Andrea Vedaldi<sup>1</sup></a></h5>
+                </div>
+            </div>
+            <div class="row affiliations">
+                <div class="col">
+                    <h6 class="text-center"><a class="text-center"><sup>1</sup>Visual Geometry Group, University of Oxford</a></h6>
+                </div>
+                <div class="col">
+                    <h6 class="text-center"><a class="text-center"><sup>2</sup>King Abdullah University of Science and
+                            Technology (KAUST)</a></h6>
+                </div>
+                <div class="col">
+                    <h6 class="text-center"><a class="text-center"><sup>3</sup>Columbia University</a></h6>
+                </div>
+                <div class="col">
+                    <h6 class="text-center"><a class="text-center"><sup>4</sup>Snap Inc</a></h6>
+                </div>
+            </div>
         </div>
-        <div class="container" style="max-width: 100%;">
-            <br>
-            <h5 class="text-center">University of Oxford</h5>
-            <br>
+        <div class="container align-items-center">
+            <div class="row text-center mx-auto">
+                <div class="col-sm-6">
+                    <a href="https://arxiv.org/abs/xxxx" target="_blank" class="link-block w-inline-block">
+                        <img src="assets/media/arxiv_paper.png" alt="paper" class="img-fluid" style="height:100px" /></a>
+                    <br>
+                    <div class="text-block-2"><strong class="bold-text-nerf_v2">Arxiv</strong></div>
+                </div>
+                <div class="col-sm-6">
+                    <a href="https://github.com/" target="_blank" class="link-block w-inline-block">
+                        <img src="assets/media/github.png" alt="github" class="img-fluid" style="height:100px" /></a>
+                    <br>
+                    <div class="text-block-2"><strong class="bold-text-nerf_v2">Code</strong></div>
+                </div>
+            </div>
         </div>
         <hr class="divider" />
         <div class="container" style="max-width: col-sm-12;">
@@ -73,8 +125,8 @@
                         This paper introduces GES (Generalized Exponential Splatting), a novel representation that employs Generalized Exponential Function (GEF) to model 3D scenes, requiring far fewer particles to represent a scene and thus significantly outperforming Gaussian Splatting methods in efficiency with a plug-and-play replacement ability for Gaussian-based utilities.GES is validated theoretically and empirically in both principled 1D setup and realistic 3D contexts. It is shown to more accurately represent signals with sharp edges, which are typically challenging for Gaussians due to their inherent low-pass characteristics of the Gaussian function.Our empirical analysis demonstrates that GEF outperforms Gaussians in fitting natural-occurring signals (\eg squares, triangles, parabolic signals), thereby reducing the need for extensive splitting operations that increase the memory footprint of Gaussian Splatting. With the aid of a frequency-modulated loss, GES achieves competitive performance in novel-view synthesis standard benchmarks while requiring less than half the memory storage of Gaussian Splatting.
                     </p>
                 </div>
-                <div class="col-sm-12">
-                    <img src="assets/teaser.png" style="max-width: 100%;"/>
+                <div class="col-sm-12 text-center">
+                    <img src="assets/teaser.png" style="max-width: 70%;"/>
                 </div>
             </div>
         </div>
