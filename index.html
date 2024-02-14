@@ -139,7 +139,17 @@
        
         <hr class="divider" />
         <div class="container">
-            <h2> GEF Covers Gaussian and Fits Signals with Fewer Components</h2>
+            <h2> GEF Overcomes Gaussian's Low-Pass Limitation </h2>
+            <p>Gaussian is limited by its low-pass property and thus requires many overlapped components in the sharp edges to fit the high-frequency signals.</p>
+            <div class="col-sm-12">
+                <img src="assets/gaussian.png" style="max-width: 100%;"/>
+            </div>
+            <p>We propose a drop-in replacement of Gaussian: Generalized Exponential Function (GEF), which is defined as \[f_{\beta}(x) = Ae^{-\left(\frac{|x - \mu|}{\alpha}\right)^\beta}\]</p>
+            <p>GEF covers a family of functions as shown below, and reduces to the Gaussian function followed in 3D gaussian splatting when \[\alpha=1, \mu=0, \beta = 2\]. </p>
+            <div class="col-sm-8">
+                <img src="assets/gef.png" style="max-width: 100%;"/>
+            </div>
+            <h2> GEF Fits Signals with Fewer Components than Gaussian thus Reduce Size</h2>
             <div class="row">
                 <div class="col-sm-6 d-flex align-items-center" style="flex-direction: column;">
                     <video src="assets/video/gaussian.mp4" autoplay loop playsinline muted
@@ -158,6 +168,7 @@
                 </div>
             </div> -->
             <p> GEF fits signals with much fewer components. Thus, theoretically, GEF can reconstruct the same signals with less storage than Gaussian. </p>
+        <hr class="divider" />
             <h2> GES Can Be Used as A Drop-In Replacement of Gaussian Splatting to Reduce Size</h2>
             <div id="example1" class="bal-container-small">
             <div class="row">
@@ -182,11 +193,16 @@
                     <span class="handle-right-arrow"></span>
                 </div>
             </div> 
-            <!-- <div class="row">
+        </div>
+
+        <hr class="divider" />
+        <div class="container">
+            <h2> Main Results</h2>
+            <div class="row">
                 <div class="col-sm-12">
-                    <img src="assets/reconstruction.png" style="max-width: 100%;"/>
+                    <img src="assets/table.png" style="max-width: 100%;"/>
                 </div>
-            </div> -->
+            </div>
         </div>
         <!-- <div class="container">
             <h2> Method</h2>
